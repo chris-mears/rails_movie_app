@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  has_many :favorite_movies
+  has_many :users, through: :favorite_movies
 
   include HTTParty
   base_uri 'http://www.omdbapi.com/?apikey=d31f1a94&i='
